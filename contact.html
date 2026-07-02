@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>Arignar Tech Solutions · Contact</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 78% -10%, rgba(106, 141, 255, .35), transparent 60%),
+        linear-gradient(135deg, #182a5e 0%, #2f4b8f 55%, #3f63b8 100%);
+      color: #fff;
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    .brandmark-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .brandmark {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brandmark .m {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+      flex: none;
+    }
+
+    .brandmark .m img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 4px
+    }
+
+    .brandmark b {
+      display: block;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: .3px
+    }
+
+    .plus {
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .plus img {
+      height: 56px;
+      width: auto;
+      display: block
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      color: #ffd27a;
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      width: 100%;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 3px;
+      border-radius: 3px;
+      background: #f39a12;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      color: #fff;
+    }
+
+    .sub {
+      color: #cdd8ff;
+      font-size: clamp(16px, 1.6vw, 20px);
+      margin-top: 18px;
+    }
+
+    .links {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .22);
+      padding: 12px 22px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #eaf0ff;
+      backdrop-filter: blur(4px);
+      text-decoration: none;
+      display: inline-block;
+      transition: transform .2s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-3px)
+    }
+
+    .chip.accent {
+      background: #f39a12;
+      border-color: #f39a12;
+      color: #3a2400
+    }
+
+    .foot {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px min(7vw, 60px);
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    @media (max-width:600px) {
+      .brandmark-row {
+        flex-direction: column;
+        gap: 14px
+      }
+
+      .foot {
+        display: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <div class="brandmark-row">
+      <div class="brandmark">
+        <div class="m"><img src="ATSlogo.png" alt="Arignar Tech Solutions logo"></div>
+        <b>Arignar Tech Solutions</b>
+      </div>
+    </div>
+    <div class="kicker">Get In Touch</div>
+    <h1>Contact Us</h1>
+    <p class="sub">Sivashanmugam Thangavel · Phoenix, AZ</p>
+    <div class="links">
+      <a class="chip accent" href="mailto:siva@arignar.app">siva@arignar.app</a>
+      <a class="chip" href="https://arignar.app/" target="_blank" rel="noopener noreferrer">arignar.app</a>
+      <a class="chip" href="https://wa.me/14808091830" target="_blank" rel="noopener noreferrer">WhatsApp +1 480 809
+        1830</a>
+    </div>
+  </div>
+
+  <div class="foot"><span>Contact</span><span>Arignar Tech Solutions</span></div>
+</body>
+
+</html>
