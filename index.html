@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
   <title>Arignar Tech Solutions — BanyanPro | Diaspora Tamil Education Conference</title>
   <style>
     :root {
@@ -319,6 +320,17 @@
       color: #3a2400
     }
 
+    a.chip {
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      transition: transform .2s ease
+    }
+
+    a.chip:hover {
+      transform: translateY(-3px)
+    }
+
     .brandmark-row {
       display: flex;
       align-items: center;
@@ -412,7 +424,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .4)
+      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .4);
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    a.qr-card {
+      cursor: pointer
+    }
+
+    a.qr-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 46px -20px rgba(0, 0, 0, .5)
     }
 
     .qr-card img {
@@ -451,6 +475,24 @@
       color: var(--muted);
       font-size: 12px;
       margin-top: 2px
+    }
+
+    .qr-card .tap-hint {
+      margin-top: 14px;
+      background: var(--accent);
+      color: #3a2400;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 100px;
+    }
+
+    .qr-card .platform-logo {
+      margin-top: 12px;
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      display: block
     }
 
     /* ---------- Demo video cards ---------- */
@@ -587,22 +629,6 @@
     .lang-toggle button.active {
       background: var(--accent);
       color: #3a2400
-    }
-
-    .rotate-hint {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 80;
-      background: var(--accent);
-      color: #3a2400;
-      text-align: center;
-      padding: 10px 60px 10px 16px;
-      font-size: 12.5px;
-      font-weight: 700;
-      cursor: pointer;
     }
 
     @media (max-width:600px) {
@@ -1014,33 +1040,12 @@
       }
     }
 
-    body.hint-active .rotate-hint {
-      display: block
-    }
-
-    body.hint-active .lang-toggle {
-      display: none
-    }
-
-    body.hint-active .topbar {
-      padding-top: 40px !important
-    }
-
-    body.hint-active .title-slide .stage,
-    body.hint-active .close-slide .stage {
-      padding-top: 40px
-    }
   </style>
 </head>
 
 <body>
 
   <div class="progress" id="progress"></div>
-
-  <div class="lang-toggle" id="langToggle">
-    <button data-lang="en" class="active">EN</button>
-    <button data-lang="ta">தமிழ்</button>
-  </div>
 
   <div class="deck" id="deck">
 
@@ -1536,19 +1541,25 @@
         <h1 data-ta="ITA Tamil Karka-வை ஆராய ஸ்கேன் செய்யுங்கள்">Scan to explore ITA Tamil Karka</h1>
         <p class="sub" data-ta="Android ஆப்பைப் பெறுங்கள், அல்லது வெப் பதிப்பை உலாவுங்கள்.">Get the Android app, or browse the web version.</p>
         <div class="qr-row">
-          <div class="qr-card">
+          <a class="qr-card" href="https://play.google.com/store/apps/details?id=org.catamilacademy.itamobile"
+            target="_blank" rel="noopener noreferrer">
             <img src="itaappqr.png" alt="QR code to download the ITA Tamil Karka app">
             <span class="lbl" data-ta="Android ஆப்">Android App</span>
             <span class="sub-lbl" data-ta="பதிவிறக்க ஸ்கேன் செய்யுங்கள்">Scan to download</span>
-          </div>
-          <div class="qr-card">
+            <span class="tap-hint" data-ta="பதிவிறக்க தட்டவும்">Click to download</span>
+            <img class="platform-logo" src="playstore.png" alt="Google Play">
+          </a>
+          <a class="qr-card" href="https://tamilkarka.org/" target="_blank" rel="noopener noreferrer">
             <img src="itawebqr.png" alt="QR code to open the ITA Tamil Karka web portal">
             <span class="lbl" data-ta="வெப் போர்ட்டல்">Web Portal</span>
             <span class="sub-lbl" data-ta="பிரவுசரில் திறக்க ஸ்கேன் செய்யுங்கள்">Scan to open in browser</span>
-          </div>
+            <span class="tap-hint" data-ta="திறக்க தட்டவும்">Click to open</span>
+            <img class="platform-logo" src="web.png" alt="Web">
+          </a>
           <div class="qr-card">
             <div class="qr-placeholder" data-ta="iOS ஆப்<br>விரைவில்">iOS App<br>Coming Soon</div>
             <span class="lbl" data-ta="iOS ஆப்">iOS App</span>
+            <img class="platform-logo" src="appstore.png" alt="App Store">
             <span class="sub-lbl" data-ta="விரைவில்">Coming soon</span>
           </div>
         </div>
@@ -1604,7 +1615,7 @@
         <p class="sub" data-ta="International Tamil Academy-க்கும், புலம்பெயர் தமிழை உயிர்ப்புடன் வைத்திருக்க உழைக்கும் அனைவருக்கும் — உங்களுடன் இணைந்து உருவாக்கும் வாய்ப்பிற்கு நன்றி.">To the International Tamil Academy and everyone working to keep Tamil alive across the
           diaspora — thank you for the opportunity to build alongside you.</p>
         <div class="event" style="margin-top:32px">
-          <span class="chip accent" data-ta="பேசலாமா — contact@arignar.app">Let's talk — contact@arignar.app</span>
+          <a class="chip accent" href="mailto:contact@arignar.app" data-ta="பேசலாமா — contact@arignar.app">Let's talk — contact@arignar.app</a>
         </div>
       </div>
       <div class="foot"><span class="l" data-ta="நன்றி">Thank You</span><span>Arignar Tech Solutions</span></div>
@@ -1615,7 +1626,6 @@
   <div class="counter" id="counter">1 / 14</div>
   <div class="nav"><button id="prev">‹</button><button id="fs">⛶</button><button id="next">›</button></div>
   <div class="hint">← → to navigate · F for fullscreen</div>
-  <div class="rotate-hint" id="rotateHint">⤾ Rotate to landscape for the best view — tap to go fullscreen</div>
 
   <script>
     const slides = [...document.querySelectorAll('.slide')];
@@ -1658,36 +1668,7 @@
       localStorage.setItem('deckLang', lang);
     }
     document.querySelectorAll('.lang-toggle button').forEach(b => b.onclick = () => applyLang(b.dataset.lang));
-    applyLang(localStorage.getItem('deckLang') || 'en');
-
-    // mobile: suggest landscape, auto-fullscreen on rotation
-    const rotateHint = document.getElementById('rotateHint');
-    let hintDismissed = false;
-    function isMobileSize() { return window.matchMedia('(max-width:820px)').matches; }
-    function isLandscape() { return window.matchMedia('(orientation:landscape)').matches; }
-    function updateHintState() {
-      const show = isMobileSize() && !isLandscape() && !hintDismissed;
-      document.body.classList.toggle('hint-active', show);
-    }
-    if (rotateHint) {
-      rotateHint.addEventListener('click', () => {
-        hintDismissed = true;
-        updateHintState();
-        if (!document.fullscreenElement) { document.documentElement.requestFullscreen().catch(() => { }); }
-      });
-    }
-    function tryAutoFullscreen() {
-      updateHintState();
-      if (isMobileSize() && isLandscape() && !document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(() => { });
-      }
-    }
-    window.addEventListener('orientationchange', () => setTimeout(tryAutoFullscreen, 300));
-    if (window.screen && screen.orientation) {
-      screen.orientation.addEventListener('change', () => setTimeout(tryAutoFullscreen, 300));
-    }
-    window.addEventListener('resize', updateHintState);
-    updateHintState();
+    applyLang('en');
   </script>
 </body>
 
