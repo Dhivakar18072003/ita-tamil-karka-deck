@@ -131,15 +131,26 @@
     .chip {
       background: rgba(255, 255, 255, .12);
       border: 1px solid rgba(255, 255, 255, .22);
-      padding: 12px 22px;
+      padding: 10px 22px 10px 14px;
       border-radius: 100px;
       font-size: 15px;
       font-weight: 600;
       color: #eaf0ff;
       backdrop-filter: blur(4px);
       text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       transition: transform .2s ease;
+    }
+
+    .chip img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      flex: none;
     }
 
     .chip:hover {
@@ -197,15 +208,15 @@
     <h1>Contact Us</h1>
     <p class="sub">Sivashanmugam Thangavel · Phoenix, AZ</p>
     <div class="links">
-      <a class="chip accent" href="mailto:siva@arignar.app">siva@arignar.app</a>
-      <a class="chip" href="https://arignar.app/" target="_blank" rel="noopener noreferrer">arignar.app</a>
-      <a class="chip" href="https://wa.me/14808091830" target="_blank" rel="noopener noreferrer">WhatsApp +1 480 809
-        1830</a>
+      <a class="chip" href="mailto:siva@arignar.app"><img src="mail.png" alt="">siva@arignar.app</a>
+      <a class="chip" href="https://arignar.app/" target="_blank" rel="noopener noreferrer"><img src="web.png" alt="">arignar.app</a>
+      <a class="chip" href="https://wa.me/14808091830" target="_blank" rel="noopener noreferrer"><img
+          src="whatsapp.png" alt="">WhatsApp +1 480 809 1830</a>
     </div>
     <div class="links" style="margin-top:14px">
-      <a class="chip solid" href="https://arignarpresentation.d1ulqkc2y61lfg.amplifyapp.com/" target="_blank"
+      <a class="chip solid" href="https://presentation.arignar.app/presentation.html" target="_blank"
         rel="noopener noreferrer">View the Presentation</a>
-      <a class="chip solid" href="https://arignarpresentation.d1ulqkc2y61lfg.amplifyapp.com/future-projects.html"
+      <a class="chip solid" href="https://presentation.arignar.app/future-projects.html"
         target="_blank" rel="noopener noreferrer">See What's Next</a>
     </div>
   </div>
